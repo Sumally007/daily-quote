@@ -2,14 +2,14 @@ const quote = document.getElementById("quote");
 const author = document.getElementById("author");
 const api_url = "https://api.quotable.io/random";
 
-async function getQoute(url) {
+async function getQuote(url) {
   const response = await fetch(url);
   var data = await response.json();
   quote.innerHTML = data.content;
   author.innerHTML = data.author;
 }
 
-getQoute(api_url);
+getQuote(api_url);
 
 function tweet() {
   const quoteText = encodeURIComponent(quote.innerHTML);
